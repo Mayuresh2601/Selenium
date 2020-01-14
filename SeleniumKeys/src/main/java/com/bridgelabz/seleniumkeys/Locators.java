@@ -13,12 +13,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Locators {
 
-	public static void main(String[] args) throws InterruptedException {
-		
+	static {
 		System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumKeys/Driver/chromedriver");
-		
-		WebDriver driver = new ChromeDriver();
-		
+	}
+	private static WebDriver driver;
+	
+	public static void main(String[] args) throws InterruptedException {
+				
+		driver = new ChromeDriver();
 		driver.get("https://www.facebook.com");
 		
 		driver.findElement(By.name("firstname")).sendKeys("Arun");
