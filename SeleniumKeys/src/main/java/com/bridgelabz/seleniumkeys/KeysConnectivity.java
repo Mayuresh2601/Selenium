@@ -24,8 +24,7 @@ public class KeysConnectivity
 	private static Robot robo;
 	
     public static void main( String[] args )
-    {
-    	    	
+    {   	
     	driver = new ChromeDriver();
     	driver.get("https://www.google.com");
     	

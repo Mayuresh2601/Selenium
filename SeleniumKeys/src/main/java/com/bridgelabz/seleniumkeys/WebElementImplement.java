@@ -58,5 +58,4 @@ public class WebElementImplement {
 		Thread.sleep(500);
 		driver.close();
 	}
-
 }
