@@ -13,15 +13,9 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class ScreenshotConnectivity 
-{
-	static {
-    	System.setProperty("webdriver.chrome.driver","/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumScreenshot/Driver/chromedriver");
-	}
-	private static WebDriver driver;
+public class ScreenshotConnectivity extends Base {
 	
     public static void main( String[] args )
     {

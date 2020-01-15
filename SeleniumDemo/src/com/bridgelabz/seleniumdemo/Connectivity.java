@@ -7,15 +7,9 @@
 ******************************************************************************/
 package com.bridgelabz.seleniumdemo;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Connectivity {
-	
-	static {
-		System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumKeys/Driver/chromedriver");
-	}
-	private static WebDriver driver;
+public class Connectivity extends Base{
 	
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -53,5 +47,4 @@ public class Connectivity {
 		
 		driver.close();
 	}
-
 }
