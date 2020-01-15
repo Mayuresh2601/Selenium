@@ -18,14 +18,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ScreenshotConnectivity 
 {
+	static {
+    	System.setProperty("webdriver.chrome.driver","/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumScreenshot/Driver/chromedriver");
+	}
+	private static WebDriver driver;
+	
     public static void main( String[] args )
     {
-        
-    	System.setProperty("webdriver.chrome.driver","/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumScreenshot/Driver/chromedriver");
-    	
+      
     	Date date = new Date();
      	
-    	WebDriver driver = new ChromeDriver();
+    	driver = new ChromeDriver();
     	
     	driver.get("https://www.facebook.com");
     	
@@ -44,7 +47,6 @@ public class ScreenshotConnectivity
 			
 			e.printStackTrace();
 		}
-    	
     	driver.close();
     }
 }
