@@ -8,21 +8,10 @@
 package com.bridgelabz.seleniumkeys;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class WebElementImplement {
-
-	static { 
-	System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumKeys/Driver/chromedriver");
-	System.setProperty("webdriver.gecko.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumKeys/Driver/geckodriver");
-	}
-	private static WebDriver driver;
-	private static WebElement emailId;
-	private static WebElement password;
-	private static WebElement login;
+public class WebElementImplement extends Base{
 	
 	public static void main(String[] args) throws InterruptedException {
 		
