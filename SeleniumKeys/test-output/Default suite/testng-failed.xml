@@ -5,7 +5,8 @@
     <classes>
       <class name="com.bridgelabz.seleniumkeys.AppTest">
         <methods>
-          <include name="EmailIdTextFieldSeleted"/>
+          <include name="RegistrationRadioButtonValidation"/>
+          <include name="GameLinkValidation"/>
         </methods>
       </class> <!-- com.bridgelabz.seleniumkeys.AppTest -->
     </classes>

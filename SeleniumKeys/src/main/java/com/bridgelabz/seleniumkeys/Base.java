@@ -12,6 +12,8 @@ public class Base {
 	static WebElement emailId;
 	static WebElement password;
 	static WebElement login;
+	static boolean validateBoolean;
+	static String validateString;
 	
 	static {
 		System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumKeys/Driver/chromedriver");

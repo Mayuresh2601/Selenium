@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-01-15T12:33:59Z" name="Default suite" finished-at="2020-01-15T12:34:44Z" duration-ms="45274">
+  <suite started-at="2020-01-16T06:37:37Z" name="Default suite" finished-at="2020-01-16T06:38:28Z" duration-ms="50874">
     <groups>
     </groups>
-    <test started-at="2020-01-15T12:33:59Z" name="Default test" finished-at="2020-01-15T12:34:44Z" duration-ms="45274">
+    <test started-at="2020-01-16T06:37:37Z" name="Default test" finished-at="2020-01-16T06:38:28Z" duration-ms="50874">
       <class name="com.bridgelabz.seleniumkeys.AppTest">
-        <test-method signature="EmailIdTextFieldSeleted()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@55040f2f]" started-at="2020-01-15T12:33:59Z" name="EmailIdTextFieldSeleted" finished-at="2020-01-15T12:34:11Z" duration-ms="12025" status="PASS">
+        <test-method signature="GameLinkValidation()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@64c87930]" started-at="2020-01-16T06:37:37Z" name="GameLinkValidation" description="Checking the Game Link is validated" finished-at="2020-01-16T06:37:47Z" duration-ms="9932" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmailIdTextFieldSeleted -->
-        <test-method signature="LoginTextFieldAlignment()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@55040f2f]" started-at="2020-01-15T12:34:11Z" name="LoginTextFieldAlignment" finished-at="2020-01-15T12:34:23Z" duration-ms="11976" status="PASS">
+        </test-method> <!-- GameLinkValidation -->
+        <test-method signature="GenderRadioButtonSelected()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@64c87930]" started-at="2020-01-16T06:37:47Z" name="GenderRadioButtonSelected" description="Checking the Male Gender Radio Button is Selected" finished-at="2020-01-16T06:37:54Z" duration-ms="7604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GenderRadioButtonSelected -->
+        <test-method signature="LoginTextFieldDisplayedEnabled()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@64c87930]" started-at="2020-01-16T06:37:54Z" name="LoginTextFieldDisplayedEnabled" description="Checking the Login Textfield of EmailId and Password is Displayed and Enabled" finished-at="2020-01-16T06:38:05Z" duration-ms="11106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTextFieldDisplayedEnabled -->
+        <test-method signature="RegistrationRadioButtonValidation()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@64c87930]" started-at="2020-01-16T06:38:05Z" name="RegistrationRadioButtonValidation" description="Checking the Radio Button is validated" finished-at="2020-01-16T06:38:18Z" duration-ms="12060" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegistrationRadioButtonValidation -->
+        <test-method signature="LoginTextFieldAlignment()[pri:1, instance:com.bridgelabz.seleniumkeys.AppTest@64c87930]" started-at="2020-01-16T06:38:18Z" name="LoginTextFieldAlignment" description="Checking the Alignment of EmailId and Password TestFields" finished-at="2020-01-16T06:38:28Z" duration-ms="10135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTextFieldAlignment -->
-        <test-method signature="LoginTextFieldDisplayed()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@55040f2f]" started-at="2020-01-15T12:34:23Z" name="LoginTextFieldDisplayed" finished-at="2020-01-15T12:34:36Z" duration-ms="12776" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTextFieldDisplayed -->
-        <test-method signature="LoginTextFieldEnabled()[pri:0, instance:com.bridgelabz.seleniumkeys.AppTest@55040f2f]" started-at="2020-01-15T12:34:36Z" name="LoginTextFieldEnabled" finished-at="2020-01-15T12:34:44Z" duration-ms="8470" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTextFieldEnabled -->
       </class> <!-- com.bridgelabz.seleniumkeys.AppTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
