@@ -2,6 +2,7 @@ package com.bridgelabz.seleniumkeys;
 
 import java.awt.Robot;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -12,6 +13,7 @@ public class Base {
 	static WebElement emailId;
 	static WebElement password;
 	static WebElement login;
+	static JavascriptExecutor script;
 	static boolean validateBoolean;
 	static String validateString;
 	

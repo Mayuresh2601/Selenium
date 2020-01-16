@@ -6,7 +6,10 @@
       <class name="com.bridgelabz.seleniumkeys.AppTest">
         <methods>
           <include name="RegistrationRadioButtonValidation"/>
-          <include name="GameLinkValidation"/>
+          <include name="openBrowser"/>
+          <include name="GenderRadioButtonSelected"/>
+          <include name="LoginTextFieldAlignment"/>
+          <include name="LoginTextFieldDisplayedEnabled"/>
         </methods>
       </class> <!-- com.bridgelabz.seleniumkeys.AppTest -->
     </classes>
