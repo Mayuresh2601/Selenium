@@ -10,6 +10,8 @@ public class Base {
 	static WebElement element1;
 	static WebElement element2;
 	static WebElement classElement;
+	static int x;
+	static int y;
 	static JavascriptExecutor js;
 	
 	static {
