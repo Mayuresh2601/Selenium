@@ -126,5 +126,4 @@ public class AppTest extends Base{
 		assertEquals(validateString, "Check out Facebook games.");
 	}
 	
-	
 }

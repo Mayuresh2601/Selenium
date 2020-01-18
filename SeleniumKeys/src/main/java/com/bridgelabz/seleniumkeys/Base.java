@@ -10,6 +10,7 @@ public class Base {
 
 	static WebDriver driver;
 	static Robot robo;
+	static WebElement element;
 	static WebElement emailId;
 	static WebElement password;
 	static WebElement login;

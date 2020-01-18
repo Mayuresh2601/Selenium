@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bridgelabz.seleniumkeys.AppTest">
+      <class name="com.bridgelabz.seleniumkeys.TestGMAIL">
         <methods>
-          <include name="RegistrationRadioButtonValidation"/>
-          <include name="openBrowser"/>
-          <include name="GenderRadioButtonSelected"/>
-          <include name="LoginTextFieldAlignment"/>
-          <include name="LoginTextFieldDisplayedEnabled"/>
+          <include name="gamilAutomate"/>
         </methods>
-      </class> <!-- com.bridgelabz.seleniumkeys.AppTest -->
+      </class> <!-- com.bridgelabz.seleniumkeys.TestGMAIL -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
