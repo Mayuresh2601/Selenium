@@ -88,6 +88,10 @@ public class DataDrivenTest extends Base{
 			Thread.sleep(1000);
 			
 			utility.setCellData("RegDatatest", "Status", i, "Pass");
+			
+			if (!utility.isXlsxSheetExist("LoginDataTest")) {
+				utility.addXlsxSheet("", "LoginDataTest");
+			}
 		}
 		
 		Thread.sleep(3000);

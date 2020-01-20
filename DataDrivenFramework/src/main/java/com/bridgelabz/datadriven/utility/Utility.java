@@ -1,6 +1,5 @@
 package com.bridgelabz.datadriven.utility;
 
-import java.awt.Color;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.DateFormat;
@@ -11,7 +10,6 @@ import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
-import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -118,10 +116,6 @@ public class Utility {
 				return false;
 			
 		XSSFCellStyle style = xWorkbook.createCellStyle();
-        XSSFColor myColor = new XSSFColor(Color.GRAY);
-        style.setFillForegroundColor(myColor);
-        style.setFillBackgroundColor(myColor);
-        xCell.setCellStyle(style);
 		
 		xSheet = xWorkbook.getSheetAt(index);
 		
@@ -154,6 +148,7 @@ public class Utility {
 	public boolean setCellData(String sheetName,String colName,int rowNum, String data){
 
 		try {
+
 			if (rowNum <= 0)
 				return false;
 
@@ -184,6 +179,7 @@ public class Utility {
 				xCell = xRow.createCell(colNum);
 
 			xCell.setCellValue(data);
+
 			excelFileOutput = new FileOutputStream(path);
 			xWorkbook.write(excelFileOutput);
 		} catch (Exception e) {
@@ -191,4 +187,41 @@ public class Utility {
 		}
 		return true;
 	}
+	
+	
+	/**Method: To Add Sheet in perticXlsx File
+	 * @param sheetname
+	 * @return Boolean Values
+	 */
+	public boolean addXlsxSheet(String path, String sheetname){		
+		
+		FileOutputStream fileOut;
+		try {
+			 xWorkbook.createSheet(sheetname);	
+			 fileOut = new FileOutputStream(path);
+			 xWorkbook.write(fileOut);
+		     fileOut.close();		    
+		} catch (Exception e) {			
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+	
+	
+	/**Method: To Check sheet exist in Xlsx file or not
+	 * @param sheetName
+	 * @return Boolean Value
+	 */
+	public boolean isXlsxSheetExist(String sheetName){
+		
+		int index = xWorkbook.getSheetIndex(sheetName);
+		if(index == -1){
+			index=xWorkbook.getSheetIndex(sheetName.toUpperCase());
+			return false;
+		}
+		else
+			return true;
+	}
+	
 }
