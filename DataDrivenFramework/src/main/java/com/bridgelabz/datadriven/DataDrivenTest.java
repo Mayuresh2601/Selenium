@@ -21,25 +21,28 @@ public class DataDrivenTest extends Base{
 		int rowCount = utility.getRowCount("RegDataTest");
 		System.out.println("Number of Rows in Sheet are: "+rowCount);
 		
+		//Add Column
+		utility.addColumn("RegDataTest", "Status");
+		
 		for (int i = 2; i <= rowCount; i++) {
 			
-			String firstName = utility.getData("RegDataTest", "firstName", i);
+			String firstName = utility.getCellData("RegDataTest", "firstName", i);
 			System.out.println("User FirstName is: "+firstName);
 			
-			String surname = utility.getData("RegDataTest", "surname", i);
+			String surname = utility.getCellData("RegDataTest", "surname", i);
 			System.out.println("User Surname is: "+surname);
 			
-			String emailId = utility.getData("RegDataTest", "emailId", i);
+			String emailId = utility.getCellData("RegDataTest", "emailId", i);
 			System.out.println("User EmailId is: "+emailId);
 			
-			String confirmEmailId = utility.getData("RegDataTest", "confirmEmailId", i);
+			String confirmEmailId = utility.getCellData("RegDataTest", "confirmEmailId", i);
 			System.out.println("User Confirm EmailId is: "+confirmEmailId);
 			
-			String password = utility.getData("RegDataTest", "password", i);
+			String password = utility.getCellData("RegDataTest", "password", i);
 			System.out.println("User Password is: "+password);
 			
 			System.out.println("*****Birthday Details*****");		
-			String birthday = utility.getData("RegDataTest", "Birthday", i);
+			String birthday = utility.getCellData("RegDataTest", "Birthday", i);
 			
 			//To split Birthday due to getting value in decimals
 			String[] date = birthday.split("/");
@@ -69,6 +72,7 @@ public class DataDrivenTest extends Base{
 			driver.findElement(By.name("reg_passwd__")).sendKeys(password);
 			Thread.sleep(500);
 			
+			//For Select Tag use Select class
 			Select select = new Select(driver.findElement(By.id("day")));
 			select.selectByVisibleText(day);
 			
@@ -78,11 +82,14 @@ public class DataDrivenTest extends Base{
 			select = new Select(driver.findElement(By.xpath("//select[@id='year']")));
 			select.selectByVisibleText(year);
 			
-			driver.findElement(By.cssSelector("#u_0_7")).click();
+			driver.findElement(By.xpath("//input[@type='radio' and @value='2']")).click();
 			
 			driver.findElement(By.name("websubmit")).click();
-			Thread.sleep(2000);
+			Thread.sleep(1000);
+			
+			utility.setCellData("RegDatatest", "Status", i, "Pass");
 		}
+		
 		Thread.sleep(3000);
 		driver.close();
 	}

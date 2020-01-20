@@ -1,6 +1,8 @@
 package com.bridgelabz.datadriven.utility;
 
+import java.awt.Color;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,17 +10,21 @@ import java.util.Date;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFColor;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class Utility {
 	
-	private FileInputStream excelFile;
+	private FileInputStream excelFileInput;
+	private FileOutputStream excelFileOutput;
 	private XSSFWorkbook xWorkbook;
 	private XSSFSheet xSheet;
 	private XSSFCell xCell;
 	private XSSFRow xRow;
+	private String path = "/home/admin1/eclipse-workspace/Mayuresh/Selenium/DataDrivenFramework/xlsxfiles/FacebookTestData.xlsx";
 	
 	
 	/**Method: To Read Xlsx File 
@@ -27,10 +33,10 @@ public class Utility {
 	public void ReadXlsxFile(String path) {
 		
 		try {
-			excelFile = new FileInputStream(path);
-			xWorkbook = new XSSFWorkbook(excelFile);
+			excelFileInput = new FileInputStream(path);
+			xWorkbook = new XSSFWorkbook(excelFileInput);
 			xSheet = xWorkbook.getSheetAt(0);
-			excelFile.close();
+			excelFileInput.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -44,7 +50,7 @@ public class Utility {
 	 * @return Data in String format
 	 */
 	@SuppressWarnings("deprecation")
-	public String getData(String sheetName, String colName, int row) {
+	public String getCellData(String sheetName, String colName, int row) {
 	
 		int colNum = -1;
 		xSheet = xWorkbook.getSheet(sheetName);
@@ -96,5 +102,93 @@ public class Utility {
 		int number = xSheet.getLastRowNum()+1;
 		return number;
 		}
+	}
+	
+	
+	/**Method: To Add New Column in Xlsx Sheet
+	 * @param sheetName
+	 * @param colName
+	 * @return Boolean Values
+	 */
+	public boolean addColumn(String sheetName,String colName){
+		
+		try{				
+			int index = xWorkbook.getSheetIndex(sheetName);
+			if(index==-1)
+				return false;
+			
+		XSSFCellStyle style = xWorkbook.createCellStyle();
+        XSSFColor myColor = new XSSFColor(Color.GRAY);
+        style.setFillForegroundColor(myColor);
+        style.setFillBackgroundColor(myColor);
+        xCell.setCellStyle(style);
+		
+		xSheet = xWorkbook.getSheetAt(index);
+		
+		xRow = xSheet.getRow(0);
+		if (xRow == null)
+			xRow = xSheet.createRow(0);
+		
+		if(xRow.getLastCellNum() == -1)
+			xCell = xRow.createCell(0);
+		else
+			xCell = xRow.createCell(xRow.getLastCellNum());
+	        xCell.setCellValue(colName);
+	        xCell.setCellStyle(style);
+	        
+		}catch(Exception e){
+			e.printStackTrace();
+			return false;
+		}
+		return true;	
+	}
+	
+	
+	/**Method: To write Data into Xlsx File
+	 * @param sheetName
+	 * @param colName
+	 * @param rowNum
+	 * @param data
+	 * @return Boolean Values
+	 */
+	public boolean setCellData(String sheetName,String colName,int rowNum, String data){
+
+		try {
+			if (rowNum <= 0)
+				return false;
+
+			int index = xWorkbook.getSheetIndex(sheetName);
+			int colNum = -1;
+			if (index == -1)
+				return false;
+
+			xSheet = xWorkbook.getSheetAt(index);
+			xRow = xSheet.getRow(0);
+
+			for (int i = 0; i < xRow.getLastCellNum(); i++) {
+				if (xRow.getCell(i).getStringCellValue().trim().equalsIgnoreCase(colName)) {
+					colNum = i;
+				}
+			}
+
+			if (colNum == -1)
+				return false;
+
+			xSheet.autoSizeColumn(colNum);
+			xRow = xSheet.getRow(rowNum - 1);
+			if (xRow == null)
+				xRow = xSheet.createRow(rowNum - 1);
+
+			xCell = xRow.getCell(colNum);
+			if (xCell == null)
+				xCell = xRow.createCell(colNum);
+
+			xCell.setCellValue(data);
+			excelFileOutput = new FileOutputStream(path);
+			xWorkbook.write(excelFileOutput);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 }
