@@ -29,9 +29,9 @@ public class AppTest extends Base{
 	 * Method: To Execute method after each test method
 	 */
 	@AfterSuite
-	public void close() {
+	public void closeBrowser() {
 
-		driver.close();
+		driver.quit();
 	}
 	
 	

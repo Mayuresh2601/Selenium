@@ -28,7 +28,7 @@ public class Utility {
 	/**Method: To Read Xlsx File 
 	 * @param path
 	 */
-	public void ReadXlsxFile(String path) {
+	public void readXlsxFile(String path) {
 		
 		try {
 			excelFileInput = new FileInputStream(path);
@@ -222,6 +222,5 @@ public class Utility {
 		}
 		else
 			return true;
-	}
-	
+	}	
 }

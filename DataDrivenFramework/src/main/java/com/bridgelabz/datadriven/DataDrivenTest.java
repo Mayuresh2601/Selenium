@@ -16,7 +16,7 @@ public class DataDrivenTest extends Base{
 		
 		//Data Driven Approach (Parameterization Approach) :-> Driving the test data from Excel Sheet 
 		utility = new Utility();
-		utility.ReadXlsxFile("/home/admin1/eclipse-workspace/Mayuresh/Selenium/DataDrivenFramework/xlsxfiles/FacebookTestData.xlsx");
+		utility.readXlsxFile("/home/admin1/eclipse-workspace/Mayuresh/Selenium/DataDrivenFramework/xlsxfiles/FacebookTestData.xlsx");
 		
 		int rowCount = utility.getRowCount("RegDataTest");
 		System.out.println("Number of Rows in Sheet are: "+rowCount);
@@ -93,7 +93,6 @@ public class DataDrivenTest extends Base{
 				utility.addXlsxSheet("", "LoginDataTest");
 			}
 		}
-		
 		Thread.sleep(3000);
 		driver.close();
 	}
