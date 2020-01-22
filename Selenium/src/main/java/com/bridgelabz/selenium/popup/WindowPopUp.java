@@ -40,6 +40,7 @@ public class WindowPopUp extends Base{
 		//Printing title of child window pop-up
 		System.out.println("Child Window PopUp Title:"+driver.getTitle());
 		
+		driver.close();
 		Thread.sleep(2000);
 		//Switching to parent Window
 		driver.switchTo().window(parentWindowId);

@@ -17,8 +17,8 @@ public class KeywordDriven extends Base{
 	private Workbook workbook;
 	private Sheet sheet;
 	private FileInputStream excelFile;
-	private String locatorName;
-	private String locatorValue;
+	private String locatorName = null;
+	private String locatorValue = null;
 	private String action;
 	private String value;
 	private Base base;
@@ -98,7 +98,7 @@ public class KeywordDriven extends Base{
 				Thread.sleep(1000);
 				WebElement element = driver.findElement(By.xpath(locatorValue));
 				System.out.println("Web Element"+element);
-				if (action.equals("sendkeys")) {
+				if (action.equalsIgnoreCase("sendkeys")) {
 					element.clear();
 					element.sendKeys(value);
 					Thread.sleep(2000);
@@ -107,6 +107,8 @@ public class KeywordDriven extends Base{
 				}
 				break;
 
+			case "null":
+				break;
 			default:
 				break;
 			}
