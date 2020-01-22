@@ -8,7 +8,7 @@ public class HandlingFrame extends Base{
 	public static void main(String[] args) throws InterruptedException {
 
 		driver = new ChromeDriver();
-		driver.get("file:///home/admin1/eclipse-workspace/Mayuresh/Selenium/selenium/Webpages/Page2.html");
+		driver.get("file:///home/admin1/eclipse-workspace/Mayuresh/Selenium/Selenium/Webpages/Page2.html");
 		Thread.sleep(1000);
 		
 		//Using id of Frame
@@ -42,7 +42,7 @@ public class HandlingFrame extends Base{
 		
 		driver.switchTo().defaultContent();
 		element2.clear();
-		element2.sendKeys("Good Evening");
+		element2.sendKeys("Good Night");
 		Thread.sleep(2000);
 		driver.close();
 	}

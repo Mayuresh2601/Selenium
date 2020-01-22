@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class Base {
 
-	static WebDriver driver;
+	protected static WebDriver driver;
 	static WebElement element1;
 	static WebElement element2;
 	static WebElement classElement;
