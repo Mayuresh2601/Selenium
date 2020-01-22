@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 public class Base {
 
 	protected static WebDriver driver;
-	static WebElement element1;
+	protected static WebElement element1;
+	protected static int x;
+	protected static int y;
+	protected static JavascriptExecutor js;
 	static WebElement element2;
 	static WebElement classElement;
-	static int x;
-	static int y;
-	static JavascriptExecutor js;
 	
 	static {
 		System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/SeleniumKeys/Driver/chromedriver");
