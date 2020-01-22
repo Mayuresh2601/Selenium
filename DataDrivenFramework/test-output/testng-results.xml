@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-01-21T08:59:23Z" name="Facebook Application Test Automation Suite" finished-at="2020-01-21T08:59:41Z" duration-ms="18296">
+  <suite started-at="2020-01-21T10:46:16Z" name="Facebook Application Test Automation Suite" finished-at="2020-01-21T10:46:32Z" duration-ms="15682">
     <groups>
     </groups>
-    <test started-at="2020-01-21T08:59:23Z" name="Facebook App Test" finished-at="2020-01-21T08:59:41Z" duration-ms="18296">
+    <test started-at="2020-01-21T10:46:16Z" name="Facebook App Test" finished-at="2020-01-21T10:46:32Z" duration-ms="15682">
       <class name="com.bridgelabz.datadriven.ParameterTest">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.bridgelabz.datadriven.ParameterTest@240237d2]" started-at="2020-01-21T08:59:23Z" name="openBrowser" finished-at="2020-01-21T08:59:32Z" duration-ms="9435" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:com.bridgelabz.datadriven.ParameterTest@240237d2]" started-at="2020-01-21T10:46:16Z" name="openBrowser" finished-at="2020-01-21T10:46:22Z" duration-ms="5793" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="facebookLoginTest(java.lang.String, java.lang.String)[pri:0, instance:com.bridgelabz.datadriven.ParameterTest@240237d2]" started-at="2020-01-21T08:59:32Z" name="facebookLoginTest" finished-at="2020-01-21T08:59:41Z" duration-ms="8703" status="PASS">
+        <test-method signature="facebookLoginTest(java.lang.String, java.lang.String)[pri:0, instance:com.bridgelabz.datadriven.ParameterTest@240237d2]" started-at="2020-01-21T10:46:22Z" name="facebookLoginTest" finished-at="2020-01-21T10:46:32Z" duration-ms="9746" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -27,7 +27,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- facebookLoginTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.bridgelabz.datadriven.ParameterTest@240237d2]" started-at="2020-01-21T08:59:41Z" name="closeBrowser" finished-at="2020-01-21T08:59:41Z" duration-ms="127" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.bridgelabz.datadriven.ParameterTest@240237d2]" started-at="2020-01-21T10:46:32Z" name="closeBrowser" finished-at="2020-01-21T10:46:32Z" duration-ms="122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
