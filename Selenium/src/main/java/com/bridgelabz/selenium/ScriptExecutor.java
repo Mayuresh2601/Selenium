@@ -26,7 +26,7 @@ public class ScriptExecutor extends Base{
 		
 		driver = new ChromeDriver();
 		driver.get("https://www.amazon.in");
-			
+
 		element1 = driver.findElement(By.xpath("//div[contains(@class,'nav-logo')]"));
 		int xcoordinates = element1.getLocation().getX();
 		int ycoordinates = element1.getLocation().getY();
@@ -40,5 +40,4 @@ public class ScriptExecutor extends Base{
 		Thread.sleep(3000);
 		driver.close();
 	}
-
 }

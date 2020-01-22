@@ -62,7 +62,7 @@ public class FacebookLoginTest extends Base{
 		driver.findElement(By.xpath("//input[contains(@value,'Log In')]")).click();
 		Thread.sleep(1000);
 	}
-	
+
 
 	/**
 	 * Method: To Close All Opened Browser which are Automated
