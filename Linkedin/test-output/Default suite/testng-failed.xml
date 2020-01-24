@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.bridgelabz.linkedin.testcases.JoinNowPageTest">
+      <class name="com.bridgelabz.linkedin.testcases.SignInPageTest">
         <methods>
-          <include name="end"/>
-          <include name="registrationPageTest"/>
-          <include name="begin"/>
+          <include name="beginTest"/>
+          <include name="endTest"/>
+          <include name="validateForgetPasswordLinkTest"/>
         </methods>
-      </class> <!-- com.bridgelabz.linkedin.testcases.JoinNowPageTest -->
+      </class> <!-- com.bridgelabz.linkedin.testcases.SignInPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

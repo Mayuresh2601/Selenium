@@ -10,13 +10,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.bridgelabz.linkedin.pages.HomePage;
+import com.bridgelabz.linkedin.pages.JoinNowPage;
+import com.bridgelabz.linkedin.pages.SignInPage;
 import com.bridgelabz.linkedin.util.TestUtil;
 
 public class TestBase {
 	
 	public static WebDriver driver;
 	public static Properties properties;
-	
+	public static JoinNowPage joinNow;
+	public static SignInPage signIn;
+	public static HomePage homePage;
+	public static String validate;
+	public static boolean flag;
 	
 	/**
 	 * Constructor: To Load the Properties file in file.io

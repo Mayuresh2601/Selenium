@@ -15,7 +15,7 @@ public class Connectivity extends Base{
 		
 		driver = new ChromeDriver();
 		
-		driver.get("https://www.google.com");
+		driver.get("https://www.linkedin.com/signup/cold-join?trk=guest_homepage-basic_nav-header-join");
 		
 		//Get Webpage Title
 		String title = driver.getTitle();

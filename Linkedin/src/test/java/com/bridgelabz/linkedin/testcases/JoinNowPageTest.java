@@ -7,13 +7,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.bridgelabz.linkedin.base.TestBase;
-import com.bridgelabz.linkedin.pages.HomePage;
 import com.bridgelabz.linkedin.pages.JoinNowPage;
 
 public class JoinNowPageTest extends TestBase{
 	
-	JoinNowPage joinNow;
-	HomePage homePage;
 	
 	/**
 	 * Constructor: To Avoid Null Pointer Exception by going to parent class(TestBase) using super()
@@ -27,7 +24,7 @@ public class JoinNowPageTest extends TestBase{
 	 * Method: To Run Initialize method before running each Testcases
 	 */
 	@BeforeMethod
-	public void begin() {
+	public void beginTest() {
 		
 		init_Driver();
 		joinNow = new JoinNowPage();
@@ -35,24 +32,23 @@ public class JoinNowPageTest extends TestBase{
 	
 	
 	/**
-	 * Method: To validate Registeration Page Title
+	 * Method: To validate Registration Page Title
 	 */
 	@Test(priority = 1)
-	public void validateRegisterPageTitleTest() {
+	public void verifyRegisterPageTitleTest() {
 		
-		String validate = joinNow.validateRegisterPageTitle();
-		assertEquals(validate, "LinkedIn India: Log In or Sign Up");
+		validate = joinNow.verifyRegisterPageTitle();
+		assertEquals(validate, "Sign Up | LinkedIn");
 	}
 	
 	
 	/**
-	 * Method: To validate SignIn Page Link present on Webpage or not
+	 * Method: To validate SignIn Page Link is working properly or not
 	 */
 	@Test(priority = 3)
 	public void validateSignInPageLinkTest() {
 		
-		boolean flag = joinNow.validateSignInPageLink();
-		assertEquals(flag, true);
+		signIn = joinNow.validateSignInPageLink();
 	}
 	
 	
@@ -67,21 +63,21 @@ public class JoinNowPageTest extends TestBase{
 	
 	
 	/**
-	 * Method: To validate change Language Link present on Webpage or not
+	 * Method: To validate change Language Link is working properly or not
 	 */
 	@Test(priority = 4)
 	public void validateChangeLanguageLinkTest() {
 		
-		boolean flag = joinNow.validateChangeLanguageLink();
+		flag = joinNow.validateChangeLanguageLink();
 		assertEquals(flag, true);
 	}
 	
 	
 	/**
-	 * Method: To run Terminate method after running each Testcases
+	 * Method: To Run Terminate method after running each Testcases
 	 */
 	@AfterMethod
-	public void end() {
+	public void endTest() {
 		
 		driver.quit();
 	}

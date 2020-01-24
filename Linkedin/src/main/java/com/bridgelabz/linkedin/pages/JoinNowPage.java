@@ -27,6 +27,9 @@ public class JoinNowPage extends TestBase{
 	@FindBy(name = "last-name")
 	WebElement lastName;
 	
+	@FindBy(xpath = "//button[text()='Continue']")
+	WebElement continueBtn;
+	
 	@FindBy(linkText = "Sign in")
 	WebElement signInLink;
 	
@@ -42,10 +45,12 @@ public class JoinNowPage extends TestBase{
 	}
 	
 	
-	/**Method: To validate Registration Page Title
+	/**Method: To verify Registration Page Title
 	 * @return String
 	 */
-	public String validateRegisterPageTitle() {
+	public String verifyRegisterPageTitle() {
+		
+		joinNow.click();
 		return driver.getTitle();
 	}
 	
@@ -53,15 +58,20 @@ public class JoinNowPage extends TestBase{
 	/**Method: To validate SignIn Page Link present on Webpage
 	 * @return true
 	 */
-	public boolean validateSignInPageLink() {
-		return signInLink.isDisplayed();
+	public SignInPage validateSignInPageLink() {
+		
+		joinNow.click();
+		signInLink.click();
+		return new SignInPage();
 	}
 	
 	
 	/**Method: To validate change Language Link present on Webpage
-	 * @return
+	 * @return true
 	 */
 	public boolean validateChangeLanguageLink() {
+		
+		joinNow.click();
 		return changeLanguage.isDisplayed();
 	}
 	
@@ -81,6 +91,7 @@ public class JoinNowPage extends TestBase{
 		joinBtn.click();
 		firstName.sendKeys(fname);
 		lastName.sendKeys(lname);
+		continueBtn.click();
 		return new HomePage();
 	}
 }
