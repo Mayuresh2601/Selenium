@@ -120,13 +120,15 @@ public class SignInPage extends TestBase{
 	 * @param email
 	 * @param pwd
 	 * @return HomePage Object
+	 * @throws InterruptedException 
 	 */
-	public HomePage signIn(String email, String pwd) {
+	public HomePage signIn(String email, String pwd) throws InterruptedException {
 		
 		signIn.click();
 		emailId.sendKeys(email);
 		password.sendKeys(pwd);
 		signInBtn.click();
+		Thread.sleep(4000);
 		return new HomePage();
 	}
 }

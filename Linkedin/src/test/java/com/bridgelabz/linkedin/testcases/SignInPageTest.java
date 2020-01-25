@@ -4,10 +4,12 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.bridgelabz.linkedin.base.TestBase;
 import com.bridgelabz.linkedin.pages.SignInPage;
+import com.bridgelabz.linkedin.util.TestUtil;
 
 public class SignInPageTest extends TestBase{
 	
@@ -27,18 +29,42 @@ public class SignInPageTest extends TestBase{
 	@BeforeMethod
 	public void beginTest() {
 		
-		init_Driver();
+		init_Driver(properties.getProperty("cromebrowser"));
 		signIn = new SignInPage();
 	}
 	
 	
 	/**
-	 * Method: To Test the Sign In Page is working properly or not 
+	 * Method: To Test the Sign In Page is working properly or not using properties file
+	 * @throws InterruptedException 
 	 */
-	@Test(priority = 6)
-	public void SignInTest() {
+	@Test
+	public void SignInTest() throws InterruptedException {
 		
 		homePage = signIn.signIn(properties.getProperty("emailId"), properties.getProperty("passWord"));
+	}
+	
+	
+	/**
+	 * Method: To Take SignIn Data form Xlsx File
+	 * @return Data in Object form 
+	 */
+	@DataProvider
+	public Object[][] getSignInTestData() {
+		
+		Object[][] data = TestUtil.getData(properties.getProperty("SigninSheet"));
+		return data;
+	}
+	
+	
+	/**
+	 * Method: To Test the Sign In Page is working properly or not using properties file
+	 * @throws InterruptedException 
+	 */
+	@Test(dataProvider = "getSignInTestData")
+	public void SignInTest(String userName, String password) throws InterruptedException {
+		
+		homePage = signIn.signIn(userName, password);
 	}
 	
 	
@@ -46,7 +72,7 @@ public class SignInPageTest extends TestBase{
 	 * Method: To validate Forget Password Link present on Webpage or not
 	 * @throws InterruptedException 
 	 */
-	@Test(priority = 4)
+	@Test
 	public void validateForgetPasswordLinkTest() throws InterruptedException {
 		
 		flag = signIn.validateForgetPasswordLink(properties.getProperty("username"));
@@ -57,7 +83,7 @@ public class SignInPageTest extends TestBase{
 	/**
 	 * Method: To validate Sign In Page Title
 	 */
-	@Test(priority = 1)
+	@Test
 	public void verifySignInPageTitleTest() {
 		
 		validate = signIn.verifySignInPageTitle();
@@ -68,7 +94,7 @@ public class SignInPageTest extends TestBase{
 	/**
 	 * Method: To validate Show Password Button present on Webpage or not
 	 */
-	@Test(priority = 2)
+	@Test
 	public void validateShowPasswordTest() {
 		
 		flag = signIn.validateShowPassword(properties.getProperty("username") ,properties.getProperty("password"));
@@ -79,7 +105,7 @@ public class SignInPageTest extends TestBase{
 	/**
 	 * Method: To Test Join Now Link is working properly or not
 	 */
-	@Test(priority = 5)
+	@Test
 	public void validateJoinNowLinkTest() {
 		
 		joinNow = signIn.validateJoinNowLink();
@@ -89,7 +115,7 @@ public class SignInPageTest extends TestBase{
 	/**
 	 * Method: To validate Hide Password Button present on Webpage or not
 	 */
-	@Test(priority = 3)
+	@Test
 	public void validateHidePasswordTest() {
 		
 		flag = signIn.validateHidePassword(properties.getProperty("username") ,properties.getProperty("password"));

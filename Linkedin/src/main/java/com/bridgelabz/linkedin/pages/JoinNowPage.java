@@ -82,15 +82,18 @@ public class JoinNowPage extends TestBase{
 	 * @param fname
 	 * @param lname
 	 * @return Homepage Object
+	 * @throws InterruptedException 
 	 */
-	public HomePage registrationPage(String un, String pwd, String fname, String lname) {
+	public HomePage registrationPage(String un, String pwd, String fname, String lname) throws InterruptedException {
 		
 		joinNow.click();
 		emailId.sendKeys(un);
 		password.sendKeys(pwd);
+		Thread.sleep(2000);
 		joinBtn.click();
 		firstName.sendKeys(fname);
 		lastName.sendKeys(lname);
+		Thread.sleep(2000);
 		continueBtn.click();
 		return new HomePage();
 	}

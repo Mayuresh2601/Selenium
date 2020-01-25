@@ -26,7 +26,7 @@ public class JoinNowPageTest extends TestBase{
 	@BeforeMethod
 	public void beginTest() {
 		
-		init_Driver();
+		init_Driver(properties.getProperty("cromebrowser"));
 		joinNow = new JoinNowPage();
 	}
 	
@@ -34,7 +34,7 @@ public class JoinNowPageTest extends TestBase{
 	/**
 	 * Method: To validate Registration Page Title
 	 */
-	@Test(priority = 1)
+	@Test
 	public void verifyRegisterPageTitleTest() {
 		
 		validate = joinNow.verifyRegisterPageTitle();
@@ -45,7 +45,7 @@ public class JoinNowPageTest extends TestBase{
 	/**
 	 * Method: To validate SignIn Page Link is working properly or not
 	 */
-	@Test(priority = 3)
+	@Test
 	public void validateSignInPageLinkTest() {
 		
 		signIn = joinNow.validateSignInPageLink();
@@ -54,9 +54,10 @@ public class JoinNowPageTest extends TestBase{
 	
 	/**
 	 * Method: To Test the Registration Page is working properly or not 
+	 * @throws InterruptedException 
 	 */
-	@Test(priority = 2)
-	public void registrationPageTest() {
+	@Test
+	public void registrationPageTest() throws InterruptedException {
 		
 		homePage = joinNow.registrationPage(properties.getProperty("username"), properties.getProperty("password"), properties.getProperty("firstname"), properties.getProperty("lastname"));
 	}
@@ -65,7 +66,7 @@ public class JoinNowPageTest extends TestBase{
 	/**
 	 * Method: To validate change Language Link is working properly or not
 	 */
-	@Test(priority = 4)
+	@Test
 	public void validateChangeLanguageLinkTest() {
 		
 		flag = joinNow.validateChangeLanguageLink();
