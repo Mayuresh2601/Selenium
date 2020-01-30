@@ -2,10 +2,15 @@ package com.bridgelabz.linkedin.util;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import com.bridgelabz.linkedin.base.TestBase;
 
@@ -21,7 +26,7 @@ public class TestUtil extends TestBase{
 	public static Object[][] getData(String sheetName) {
 		
 		try {
-			file = new FileInputStream("/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/testdata/LinkedInTestData.xlsx");
+			file = new FileInputStream("/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/repository/LinkedInTestData.xlsx");
 			workBook = WorkbookFactory.create(file);
 			
 		} catch (InvalidFormatException e) {
@@ -43,5 +48,32 @@ public class TestUtil extends TestBase{
 			}
 		}
 		return data;
+	}
+	
+	public static String[] getJsonData() throws IOException, ParseException {
+		
+		FileReader file = new FileReader("/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/repository/testdata.json");
+		
+		JSONParser parser = new JSONParser();
+		
+		Object javaObj = parser.parse(file);
+		
+		JSONObject object = (JSONObject) javaObj;
+		
+		JSONArray array = (JSONArray) object.get("SignIn Data");
+		
+		String arr[] = new String[array.size()];
+		
+		for (int i = 0; i < array.size(); i++) {
+			
+			JSONObject obj = (JSONObject) array.get(i);
+			System.out.println(obj);
+			String username = (String) obj.get("userName");
+			String password = (String) obj.get("password");
+			System.out.println("USername: "+username);
+			System.out.println("Password: "+password);
+			arr[i] = username +","+password;
+		}
+		return arr;
 	}
 }

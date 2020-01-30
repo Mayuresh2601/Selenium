@@ -2,6 +2,10 @@ package com.bridgelabz.linkedin.testcases;
 
 import static org.testng.Assert.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -67,6 +71,35 @@ public class SignInPageTest extends TestBase{
 		homePage = signIn.signIn(userName, password);
 	}
 	
+	
+	/**
+	 * Method: To Take Sign in Data from Json File
+	 * @return String array
+	 * @throws IOException
+	 * @throws ParseException
+	 */
+	@DataProvider(name = "JsonData")
+	public String[] getJsonSignInTestData() throws IOException, ParseException {
+		
+		String[] stringArray = TestUtil.getJsonData();
+		return stringArray;
+	}
+	
+	
+	/**
+	 * Method: To Test the Sign In Page is working properly or not using json file
+	 * @param data
+	 * @throws InterruptedException
+	 */
+	@Test(dataProvider = "JsonData")
+	public void JsonSignInTest(String data) throws InterruptedException {
+		
+		String[] items = data.split(",");
+		
+		String username = items[0];
+		String password = items[1];
+		homePage = signIn.signIn(username, password);
+	}
 	
 	/**
 	 * Method: To validate Forget Password Link present on Webpage or not

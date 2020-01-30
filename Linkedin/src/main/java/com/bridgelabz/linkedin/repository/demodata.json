@@ -1,0 +1,17 @@
+{
+	"firstname" : "Mayuresh",
+	"lastname" : "Sonar",
+	"address" : 
+	[
+		{
+			"state" : "Maharashtra",
+			"country" : "India",
+			"Pin Code" : 401209
+		},
+		{
+			"state" : "Pune",
+			"country" : "India",
+			"Pin Code" : 450382
+		}
+	]
+}

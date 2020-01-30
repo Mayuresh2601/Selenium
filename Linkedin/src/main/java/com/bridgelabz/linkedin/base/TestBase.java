@@ -20,6 +20,9 @@ import com.bridgelabz.linkedin.pages.JoinNowPage;
 import com.bridgelabz.linkedin.pages.SignInPage;
 import com.bridgelabz.linkedin.util.TestUtil;
 
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestBase {
 	
 	public static WebDriver driver;
@@ -61,10 +64,12 @@ public class TestBase {
 	public static void init_Driver(String browserName) {
 		
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/drivers/chromedriver");
+//			System.setProperty("webdriver.chrome.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/drivers/chromedriver");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if (browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/drivers/geckodriver");
+//			System.setProperty("webdriver.gecko.driver", "/home/admin1/eclipse-workspace/Mayuresh/Selenium/Linkedin/src/main/java/com/bridgelabz/linkedin/drivers/geckodriver");
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
 		
