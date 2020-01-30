@@ -16,6 +16,7 @@ public class JoinNowPageTest extends TestBase{
 	 * Constructor: To Avoid Null Pointer Exception by going to parent class(TestBase) using super()
 	 */
 	public JoinNowPageTest() {
+		
 		super();
 	}
 
@@ -26,7 +27,7 @@ public class JoinNowPageTest extends TestBase{
 	@BeforeMethod
 	public void beginTest() {
 		
-		init_Driver(properties.getProperty("cromebrowser"));
+		init_Driver(properties.getProperty("chromebrowser"));
 		joinNow = new JoinNowPage();
 	}
 	

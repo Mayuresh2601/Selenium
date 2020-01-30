@@ -29,7 +29,7 @@ public class SignInPageTest extends TestBase{
 	@BeforeMethod
 	public void beginTest() {
 		
-		init_Driver(properties.getProperty("cromebrowser"));
+		init_Driver(properties.getProperty("chromebrowser"));
 		signIn = new SignInPage();
 	}
 	

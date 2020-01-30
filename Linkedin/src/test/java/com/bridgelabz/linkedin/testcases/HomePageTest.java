@@ -31,7 +31,7 @@ public class HomePageTest extends TestBase{
 	@BeforeMethod
 	public void beginTest() throws InterruptedException {
 		
-		init_Driver(properties.getProperty("cromebrowser"));
+		init_Driver(properties.getProperty("chromebrowser"));
 		signIn = new SignInPage();
 		homePage = signIn.signIn(properties.getProperty("emailId"), properties.getProperty("passWord"));
 	}
@@ -45,7 +45,7 @@ public class HomePageTest extends TestBase{
 	public void verifyHomePageTitleTest() {
 		
 		validate = homePage.verifyHomePageTitle();
-		assertEquals(validate, "LinkedIn");
+		assertEquals(validate, "(1) LinkedIn");
 	}
 	
 	
